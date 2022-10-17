@@ -1,0 +1,36 @@
+// Information needed to access JIRA's REST API
+export const JIRA_API_URL = "https://jira-vira.volvocars.biz/rest/api/2"
+export const JIRA_AUTH_USER = "username"
+export const JIRA_AUTH_PASS = "password"
+export const JIRA_SPRINT_FIELD = "customfield_10701"
+export const JIRA_POINTS_FIELD = "customfield_10708"
+
+// Information needed to determine the issues to track
+// And how to render the graphs
+export const PERIOD_START_DATE = "2022-09-12"
+export const PERIOD_END_DATE = "2022-11-25"
+
+export const BOARD_MODE = "scrum"
+export const SCRUM_TARGET_ISSUE_KEY = "ARTCSP-12345"
+// Alternatively:
+// export const BOARD_MODE = "kanban"
+// export const KANBAN_TODO_STATUS = "To Do"
+
+//Test this query to make sure it includes the issues the way you want. Also: if it is not ordered by rank asc, it won't do what you want
+export const ISSUES_JQL = "project=ARTCSP AND "Leading Work Group"=ARTCSP-Team AND type!=Epic"
+
+// We need to specify this because jira's historical queries don't work with statusCategory Done - only various statuses.
+// And the query needs to filter out anything that was already done before the period
+export const DONE_STATUSES = ["Done", "Closed"]
+
+//This is the file in which the data will be saved for each day this
+// tool runs. The series that is built up is what is used to generate
+// the graphs
+export const TIMESERIES_DATA_FILE = "./example-series.json"
+
+//Details for graph rendering
+export const BURNDOWN_OUTPUT_FILE = "./example-burndown.html"
+export const BURNDOWN_GRAPH_TITLE = "Example Burndown, Q3"
+export const CUMULATIVE_GRAPH_TITLE = "Example Cumulative Points, Q3"
+export const CUMULATIVE_OUTPUT_FILE = "./example-cumulative.html"
+export const GRAPH_POINT_TICK = 10
