@@ -1,5 +1,5 @@
 // Information needed to access JIRA's REST API
-export const JIRA_API_URL = "https://jira-vira.volvocars.biz/rest/api/2"
+export const JIRA_API_URL = "https://jira-server/rest/api/2"
 export const JIRA_AUTH_USER = "username"
 export const JIRA_AUTH_PASS = "password"
 export const JIRA_SPRINT_FIELD = "customfield_10701"
@@ -11,13 +11,13 @@ export const PERIOD_START_DATE = "2022-09-12"
 export const PERIOD_END_DATE = "2022-11-25"
 
 export const BOARD_MODE = "scrum"
-export const SCRUM_TARGET_ISSUE_KEY = "ARTCSP-12345"
+export const SCRUM_TARGET_ISSUE_KEY = "XYZ-12345"
 // Alternatively:
 // export const BOARD_MODE = "kanban"
 // export const KANBAN_TODO_STATUS = "To Do"
 
 //Test this query to make sure it includes the issues the way you want. Also: if it is not ordered by rank asc, it won't do what you want
-export const ISSUES_JQL = "project=ARTCSP AND "Leading Work Group"=ARTCSP-Team AND type!=Epic"
+export const ISSUES_JQL = "project=XYZ AND "Leading Work Group"=XYZ-Team AND type!=Epic"
 
 // We need to specify this because jira's historical queries don't work with statusCategory Done - only various statuses.
 // And the query needs to filter out anything that was already done before the period
